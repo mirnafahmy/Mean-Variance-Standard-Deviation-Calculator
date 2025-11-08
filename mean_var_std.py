@@ -1,10 +1,10 @@
 import numpy as np
 
 def calculate(list):
-    if len(lists) != 9:
+    if len(list) != 9:
         print('List must contain nine numbers.')
 
-    arr = np.array(lists).reshape(3,3)
+    arr = np.array(list).reshape(3,3)
     
     mean = [list(np.mean(arr, axis=0)), 
             list(np.mean(arr, axis=1)), np.mean(arr)]
