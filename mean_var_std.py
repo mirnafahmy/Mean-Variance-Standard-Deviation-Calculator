@@ -3,26 +3,33 @@ import numpy as np
 def calculate(list):
     if len(list) != 9:
         print('List must contain nine numbers.')
-    else:
-        arr = np.array(list).reshape(3,3)
+
+    arr = np.array(list).reshape(3,3)
+    print(arr)
+
+    mean = [np.mean(arr,axis=0).tolist(),
+            np.mean(arr,axis=1).tolist(),
+            np.mean(arr)]
     
-    mean = [list(np.mean(arr, axis=0)), 
-            list(np.mean(arr, axis=1)), np.mean(arr)]
+    vari = [np.var(arr, axis=0).tolist(), 
+            np.var(arr, axis=1).tolist(), 
+            np.var(arr)]
     
-    vari = [list(np.var(arr, axis=0)), 
-                list(np.var(arr, axis=1)), np.var(arr)]
+    std_dev = [np.std(arr, axis=0).tolist(), 
+               np.std(arr, axis=1).tolist(), 
+               np.std(arr)]
     
-    std_dev = [list(np.std(arr, axis=0)), 
-               list(np.std(arr, axis=1)), np.std(arr)]
+    max_v = [np.max(arr, axis=0).tolist(), 
+            np.max(arr, axis=1).tolist(), 
+            np.max(arr)]
     
-    max_v = [list(np.max(arr, axis=0)), 
-               list(np.max(arr, axis=1)), np.max(arr)]
+    min_v = [np.min(arr, axis=0).tolist(), 
+            np.min(arr, axis=1).tolist(), 
+            np.min(arr)]
     
-    min_v = [list(np.min(arr, axis=0)), 
-               list(np.min(arr, axis=1)), np.min(arr)]
-    
-    sum_v = [list(np.sum(arr, axis=0)), 
-               list(np.sum(arr, axis=1)), np.sum(arr)]
+    sum_v = [np.sum(arr, axis=0).tolist(), 
+            np.sum(arr, axis=1).tolist(), 
+            np.sum(arr)]
 
     calculations = {
         'mean': mean,
